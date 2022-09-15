@@ -1,0 +1,98 @@
+.TodoItem {
+    background-color: #FAFAFA;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+    border-radius: 20px;
+  }
+
+  .TodoItem::before {
+
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 65px;
+    height: 65px;
+    background: transparent;
+    border-radius: 65px;
+    transition: background 0.5s, width 0.5s;
+  }
+
+  .TodoItem:hover::before {
+    width: 100%;
+    background: rgb(77, 130, 199);
+transition-delay: 0s,0.5s;
+
+  }
+
+  .TodoItem::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+    transition: 0.5s;
+    transition-delay: 0s;
+  }
+
+  TodoItem:hover::after {
+    left: 24px;
+    transition-delay: 0.5s;
+    transform: rotate(45deg) scale(1.5);
+
+
+
+  }
+  .TodoItem-p {
+    margin: 24px 0 24px 24px;
+    width: calc(100% - 120px);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+    color: #1E1E1F;
+        box-sizing: border-box;
+  }
+  .TodoItem-p--complete {
+    text-decoration: line-through;
+  }
+  
+  .Icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    font-size: 24px;
+    font-weight: bold;
+    /* background-color: #CCC; */
+  }
+  
+  .Icon-check {
+    position: absolute;
+    left: 7px;
+    transform: rotate(180deg);
+    top: 9px;
+  }
+  .Icon-check--active {
+    color: #4caf50;
+  }
+  
+  .Icon-delete {
+    position: absolute;
+    top: -24px;
+    right: 0;
+  }
+  .Icon-delete:hover {
+    color: red;
+  }
